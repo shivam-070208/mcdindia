@@ -1,12 +1,13 @@
 import React from "react";
-import { Heroic, Navbar } from "./components";
+import { HappyMeal, Heroic, Menu, Navbar } from "./components";
 
 const App = () => {
   return (
     <div className="max-w-screen relative overflow-x-hidden">
       <Navbar />
       <Heroic />
-      <div className="h-screen"></div>
+      <Menu />
+     <HappyMeal />
     </div>
   );
 };

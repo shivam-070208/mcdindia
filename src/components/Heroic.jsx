@@ -96,7 +96,7 @@ const Heroic = () => {
   return (
     <motion.div
       ref={containeref}
-      className="flex min-h-screen w-screen maskit relative flex-col items-center gap-2 bg-[#FFBC0D] pt-29 pb-7 pr-3 md:flex-row md:pt-0 md:pb-0"
+      className="maskit relative flex min-h-screen w-screen flex-col items-center gap-2 bg-[#FFBC0D] pt-29 pr-3 pb-7 md:flex-row md:pt-0 md:pr-0 md:pb-0"
     >
       <motion.div
         animate={{ y: -lerp }}
@@ -126,7 +126,7 @@ const Heroic = () => {
             <motion.div
               key={index}
               animate={{ opacity: current == index + 1 ? 1.0 : 0.1 }}
-             transition={{duration:instant?0:1.4}}
+              transition={{ duration: instant ? 0 : 1.4 }}
               className="block min-w-full px-7 text-5xl font-bold text-red-600 lg:px-28"
             >
               {!!slides.text && (
@@ -169,33 +169,40 @@ const Heroic = () => {
           </div>
         </div>
       </motion.div>
-      <div className="mx-auto heroicimage relative max-w-[93vw] flex-1 overflow-hidden md:h-screen md:w-full">
+      <motion.div className="heroicimage relative mx-auto max-w-[93vw] flex-1 overflow-hidden md:h-screen md:w-full">
         <motion.div
-          animate={{ transform: `translateX(${-current * 100}%)` }}
-          transition={{ duration: instant ? 0 : 1.4, ease: "circInOut" }}
+          animate={{ transform: `translateX(${-current * 100}%) ` }}
+          transition={{ duration: instant ? 0 : animating?1.4:0, ease: "circInOut" }}
           className="flex h-full"
         >
-          <img
-            src={slides[slides.length - 1].ReferenceImage}
-            className="h-full min-w-[93vw] object-fill object-center md:min-w-full"
+          <div
+            style={{
+              background: `url(${slides[slides.length - 1].ReferenceImage})`,
+            }}
+            className="h-full min-w-[93vw] bg-fixed md:min-w-full"
           />
           {slides.map((slides, index) => (
-            <motion.img
+            <motion.div
+              style={{
+                background: `url(${slides.ReferenceImage})`,
+              }}
               animate={{
                 filter: current == index + 1 ? "blur(0px)" : "blur(5px)",
+                y:lerp/6
               }}
               transition={{ duration: instant ? 0 : 1.4 }}
               key={index}
-              src={slides.ReferenceImage}
-              className="h-full min-w-[93vw] object-fill object-center md:min-w-full"
+              className="h-full min-w-[93vw]  md:min-w-full"
             />
           ))}
-          <img
-            src={slides[0].ReferenceImage}
-            className="h-full min-w-[93vw] object-fill object-center md:min-w-full"
+          <div
+            style={{
+              background: `url(${slides[0].ReferenceImage})`,
+            }}
+            className="h-full min-w-[93vw] bg-fixed md:min-w-full"
           />
         </motion.div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
