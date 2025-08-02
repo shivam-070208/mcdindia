@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+@import 'tailwindcss';
+
+body,html{
+    scroll-behavior:smooth;
+    font-family: "Margarine", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.maskit::after{
+    content: "";
+    background: url('/heromask.svg') top;
+    background-size: 100% 100%;
+    
+    width: 50px;
+    height: 50px;
+    transform: scale(6.0);
+    position: absolute;
+    top: 97.8%;
+    left: 100px;
+
+}
+@media (min-width:750px) {
+    
+    .heroicimage::before{
+    content: '';
+    height: 100vh;
+    
+    width: 45px;
+    position: absolute;
+    left: -20px;
+    top: 0;
+        z-index: 1;
+    background: url('heroicimagemask.svg');
+    background-size: cover;
+    }
+}
