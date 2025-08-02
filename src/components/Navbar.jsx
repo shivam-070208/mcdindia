@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <motion.div
       animate={{ y: fixednav && [-100, 0] }} transition={{duration:0.2}}
-      className={`w-screen origin-top ${fixednav ? "fixed top-0 bg-white" : "absolute bg-[#ffffff4c]"} z-10 flex items-center justify-between px-4 py-4 backdrop-brightness-100 md:px-30`}
+      className={`w-screen origin-top ${fixednav ? "fixed top-0 bg-white" : "absolute bg-[#ffffff4c]"} z-10 flex items-center justify-between px-4 py-4 backdrop-brightness-100 md:px-30 shadow-md`}
     >
       <div>
         <img src={Logo} />

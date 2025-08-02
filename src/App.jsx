@@ -8,6 +8,7 @@ const App = () => {
       <Heroic />
       <Menu />
      <HappyMeal />
+     <div className="w-screen h-screen"></div>
     </div>
   );
 };
