@@ -1,5 +1,5 @@
 import React from "react";
-import { HappyMeal, Heroic, Menu, Navbar } from "./components";
+import { HappyMeal, Heroic, Menu, Navbar, Restaurant } from "./components";
 
 const App = () => {
   return (
@@ -8,7 +8,7 @@ const App = () => {
       <Heroic />
       <Menu />
      <HappyMeal />
-     <div className="w-screen h-screen"></div>
+     <Restaurant />
     </div>
   );
 };

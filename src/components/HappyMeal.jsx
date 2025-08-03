@@ -84,7 +84,7 @@ const HappyMeal = () => {
   return (
     <section
       ref={containerref}
-      id="happymeal relative"
+      id="happymeal"
       className="bg-[url('/happymealbg.webp')]"
     >
       <motion.div
